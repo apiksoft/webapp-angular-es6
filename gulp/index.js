@@ -1,7 +1,8 @@
 import fs from 'fs';
 import gulp from 'gulp';
+import gulpClean from 'gulp-clean';
 import browserSync from 'browser-sync';
-import modRewrite  from 'connect-modrewrite';
+import modRewrite from 'connect-modrewrite';
 import runSequence from 'run-sequence';
 
 global.dest = '.debug';
@@ -14,12 +15,14 @@ tasks.forEach((task) => {
 
 // clean
 gulp.task('clean', function () {
-  return gulp.src(global.dest+ '/*', {read: false})
-    .pipe(clean());
+  return gulp.src(global.dest + '/*', { read: false })
+    .pipe(gulpClean());
 });
 
 // local development tasks
-gulp.task('dev', ['lint', 'javascript', 'sass', 'html']);
+gulp.task('dev', cb => {
+  runSequence('clean', ['lint', 'javascript', 'sass', 'html'], cb);
+});
 
 // build tasks
 gulp.task('build', cb => {
@@ -38,4 +41,13 @@ gulp.task('default', ['dev'], () => {
       ]
     }
   });
+  gulp.watch('./src/**/*.js', ['javascript-watch']);
+  gulp.watch('./src/**/*.scss', ['sass-watch']);
+  gulp.watch('./src/index.html', ['html-watch']);
+  gulp.watch(global.dest + '/css/*.css', function() {
+    gulp.src(global.dest + '/css/*.css')
+      .pipe(browserSync.reload({ stream:true }));
+  });
+  // gulp.watch('./src/**/*.json', ['json-watch']);
+  // gulp.watch('./src/templates/**/*.html', ['html-templates-watch']);
 });

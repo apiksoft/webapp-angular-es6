@@ -1,5 +1,3 @@
-const hello = 'world';
+const hello = 'hola!';
 
-alert(hello);
-
-console.log(document);
+// alert(hello);

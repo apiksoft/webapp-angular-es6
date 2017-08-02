@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import gulpUglify from 'gulp-uglify';
+import browserSync from 'browser-sync';
 import browserify from 'browserify';
 import babelify from 'babelify';
 import pump from 'pump';
@@ -36,4 +37,8 @@ gulp.task('javascript-build', cb => {
     ],
         cb
     );
+});
+
+gulp.task('javascript-watch', ['javascript'], () => {
+  browserSync.reload();
 });
