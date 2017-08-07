@@ -40,5 +40,5 @@ gulp.task('javascript-build', ['javascript'], cb => {
 });
 
 gulp.task('javascript-watch', ['javascript'], () => {
-  browserSync.reload();
+    browserSync.reload();
 });

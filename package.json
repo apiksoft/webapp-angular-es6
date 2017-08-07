@@ -43,6 +43,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.5",
     "angular": "^1.6.5",
     "dead-simple-grid-css": "^1.0.2",
     "dead-simple-grid-npm": "^1.0.0",

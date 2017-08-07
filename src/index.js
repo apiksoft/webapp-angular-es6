@@ -5,5 +5,3 @@ angular.module(appname, []);
 angular.element(document).ready(() => {
     angular.bootstrap(document, [appname]);
 });
-
-console.log(angular);
