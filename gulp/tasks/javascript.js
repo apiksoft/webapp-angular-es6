@@ -29,7 +29,7 @@ gulp.task('javascript', () => {
         .pipe(gulp.dest(global.dest + '/js'));
 });
 
-gulp.task('javascript-build', cb => {
+gulp.task('javascript-build', ['javascript'], cb => {
     pump([
         gulp.src(global.dest + '/js/*.js'),
         gulpUglify(),

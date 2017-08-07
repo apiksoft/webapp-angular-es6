@@ -21,12 +21,12 @@ gulp.task('clean', function () {
 
 // local development tasks
 gulp.task('dev', cb => {
-  runSequence('clean', ['lint', 'javascript', 'sass', 'html'], cb);
+  runSequence('clean', ['lint', 'javascript', 'vendor', 'sass', 'html'], cb);
 });
 
 // build tasks
 gulp.task('build', cb => {
-  runSequence('clean', ['lint', 'javascript-build', 'sass-build', 'html'], cb);
+  runSequence('clean', ['lint', 'javascript-build', 'vendor-build', 'sass-build', 'html'], cb);
 });
 
 // default task

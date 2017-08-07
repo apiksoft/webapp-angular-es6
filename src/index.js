@@ -1,3 +1,1 @@
-const hello = 'hola!';
-
-// alert(hello);
+console.log(angular);
