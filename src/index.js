@@ -1,6 +1,7 @@
-import { appname } from './config';
+import { appname, defaultRoute } from './config';
 
-angular.module(appname, []);
+angular.module(appname, [])
+    .config(defaultRoute);
 
 angular.element(document).ready(() => {
     angular.bootstrap(document, [appname]);

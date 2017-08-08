@@ -8,5 +8,8 @@
     },
     "rules": {
         "semi": 2
+    },
+    "settings": {
+        "import/resolver": "babel-root-import"
     }
 }
