@@ -1,8 +1,7 @@
-import { defaultRoute } from './routes.js';
-import { appname, apiUrl } from './config.js';
+const appName = 'myApplication';
+const apiUrl = '';
 
 export {
-    appname,
-    apiUrl,
-    defaultRoute
+    appName,
+    apiUrl
 };
